@@ -64,7 +64,7 @@ export default function Artists() {
         <>{loading ? <h1>Loading...</h1> :
             <div className='artists-cont'>
                 <section className='artists-top'>
-                    <h3>Top Artists</h3>
+                    <h1>Top Artists</h1>
                     <div className="toggle">
                         <button onClick={() => { setArtists(() => artistsLT) }}>All Time</button>
                         <button onClick={() => { setArtists(() => artistsMT) }}>Last 6 Months</button>
