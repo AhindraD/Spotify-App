@@ -26,7 +26,7 @@ export default function Artists() {
                 data => {
                     setArtistsLT(data.items);
                     setArtists(() => data.items);
-                    console.log(data.items);
+                    //console.log(data.items);
                 }
             )
         fetch("https://api.spotify.com/v1/me/top/artists?time_range=medium_term", {
