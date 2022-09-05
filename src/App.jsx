@@ -61,12 +61,13 @@ function App() {
           </div>
         } />
         <Route path="/validate" element={<Validate />} />
-
-        <Route path='/profile' element={<HomePage />} />
+        <Route path='/home/*' element={<HomePage />} />
+        {/* (/*) in above line : to make the /home capable of going deeper i.e. make it a parent */}
+        {/* <Route path='/profile' element={<HomePage />} />
         <Route path='/top-artists' element={<HomePage />} />
         <Route path='/top-tracks' element={<HomePage />} />
         <Route path='/recent-activity' element={<HomePage />} />
-        <Route path='/playlists' element={<HomePage />} />
+        <Route path='/playlists' element={<HomePage />} /> */}
       </Routes>
     </userContext.Provider>
   );

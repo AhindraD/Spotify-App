@@ -4,6 +4,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import userContext from '../Context/UserContext';
 
+import LeftBarNav from "./LeftBarNav/LeftBarNav"
+
 export default function HomePage() {
     const { userData, setUserData, token, setToken } = useContext(userContext);
 
@@ -37,6 +39,16 @@ export default function HomePage() {
 
 
     return (
-        <div className='home'>H-O-M-E</div>
+        <div className='home-cont'>
+            <LeftBarNav />
+            <div className='subpages-cont'>
+                <Routes>
+                    <Route path='/' element={<AllAdHome />} />
+                    <Route path='/myads' element={<MyAd />} />
+                    <Route path='/myfavs' element={<MyFavs />} />
+                    <Route path='/mysold' element={<MySold />} />
+                </Routes>
+            </div>
+        </div>
     )
 }

@@ -25,7 +25,7 @@ export default function Validate(props) {
         setToken(() => token);
         console.log(token);
         if (token !== "") {
-            navigate('/profile');
+            navigate('/home');
         }
     }, []);
 
