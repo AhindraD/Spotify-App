@@ -23,36 +23,11 @@ export default function Sidebar() {
     "rcnt": "/home/activity",
     "plist": "/home/playlists",
   }
-
-  let [prof, setProf] = useState("");
-  let [artst, setArtst] = useState("");
-  let [trac, setTrac] = useState("");
-  let [rcnt, setRcnt] = useState("");
-  let [plist, setPlist] = useState("");
+  let [active, setActive] = useState("");
 
   function handleClick(arg) {
     goTo(navMap[arg]);
-    setProf("");
-    setArtst("");
-    setTrac("");
-    setRcnt("");
-    setPlist("");
-
-    if (arg === "prof") {
-      setProf("active");
-    }
-    else if (arg === "artst") {
-      setArtst("active");
-    }
-    else if (arg === "trac") {
-      setTrac("active");
-    }
-    else if (arg === "rcnt") {
-      setRcnt("active");
-    }
-    else if (arg === "plist") {
-      setPlist("active");
-    }
+    setActive(arg);
   }
 
   return (
@@ -63,27 +38,27 @@ export default function Sidebar() {
 
       <section className="navs">
 
-        <div className={`nav ${prof}`} onClick={() => handleClick("prof")}>
+        <div className={`nav ${active === "prof" ? "active" : ""}`} onClick={() => handleClick("prof")}>
           <img src={profile} alt="profile-logo" />
           <p>Profile</p>
         </div>
 
-        <div className={`nav ${artst}`} onClick={() => handleClick("artst")}>
+        <div className={`nav ${active === "artst" ? "active" : ""}`} onClick={() => handleClick("artst")}>
           <img src={mic} alt="artists-logo" />
           <p>Top Artists</p>
         </div>
 
-        <div className={`nav ${trac}`} onClick={() => handleClick("trac")}>
+        <div className={`nav ${active === "trac" ? "active" : ""}`} onClick={() => handleClick("trac")}>
           <img src={music} alt="tracks-logo" />
           <p>Top Tracks</p>
         </div>
 
-        <div className={`nav ${rcnt}`} onClick={() => handleClick("rcnt")}>
+        <div className={`nav ${active === "rcnt" ? "active" : ""}`} onClick={() => handleClick("rcnt")}>
           <img src={recents} alt="recents-logo" />
           <p>Recents</p>
         </div>
 
-        <div className={`nav ${plist}`} onClick={() => handleClick("plist")}>
+        <div className={`nav ${active === "plist" ? "active" : ""}`} onClick={() => handleClick("plist")}>
           <img src={playlist} alt="playlists-logo" />
           <p>Playlists</p>
         </div>
