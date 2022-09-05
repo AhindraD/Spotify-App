@@ -11,7 +11,7 @@ export default function Validate(props) {
     const { token, setToken } = useContext(userContext);
     useEffect(() => {
         const hash = window.location.hash;
-        let token; //= window.localStorage.getItem("token");
+        let token = null; //= window.localStorage.getItem("token");
         if (!token && hash) {
             token = hash
                 .substring(1)
@@ -23,8 +23,8 @@ export default function Validate(props) {
             window.localStorage.setItem("token", token);
         }
         setToken(() => token);
-        console.log(token);
-        if (token !== "") {
+        //console.log(token);
+        if (token !== null) {
             navigate('/home');
         }
     }, []);

@@ -14,7 +14,7 @@ import Playlists from "./Playlists/Playlists"
 export default function HomePage() {
     const { userData, setUserData, token, setToken } = useContext(userContext);
 
-    async function user_account(token) {
+    async function getUserAccount(token) {
         console.log(token);
         const user = await axios
             .get("https://api.spotify.com/v1/me", {
@@ -30,11 +30,15 @@ export default function HomePage() {
                 console.log(err);
             });
         console.log(user);
-        setUserData(() => user)
+        setUserData(() => user.data)
     };
 
     useEffect(() => {
-        user_account(token);
+        if (token === null) {
+            setToken(() => window.localStorage.getItem("token"));
+            getUserAccount(window.localStorage.getItem("token"));
+        }
+        else { getUserAccount(token); }
     }, [])
 
 

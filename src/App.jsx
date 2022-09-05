@@ -9,11 +9,11 @@ import userContext from "./Context/UserContext";
 // {AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}
 function App() {
   let [userData, setUserData] = useState(null);
-  let [token, setToken] = useState("");
+  let [token, setToken] = useState(null);
   let [artists, setArtists] = useState(null);
   let [tracks, setTracks] = useState(null);
   let [recent, setRecent] = useState(null);
-  let [playlists, setPlaylists] = useState(null);
+  let [playlists, setPlaylists] = useState([]);
 
   const navigate = useNavigate();
 

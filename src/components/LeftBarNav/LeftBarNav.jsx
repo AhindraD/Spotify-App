@@ -23,7 +23,7 @@ export default function Sidebar() {
     "rcnt": "/home/activity",
     "plist": "/home/playlists",
   }
-  let [active, setActive] = useState("");
+  let [active, setActive] = useState("prof");
 
   function handleClick(arg) {
     goTo(navMap[arg]);
