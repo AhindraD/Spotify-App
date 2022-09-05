@@ -5,6 +5,11 @@ import { useEffect, useState, useContext } from "react";
 import userContext from '../Context/UserContext';
 
 import LeftBarNav from "./LeftBarNav/LeftBarNav"
+import Profile from "./Profile/Profile"
+import Artists from "./Artists/Artists"
+import Tracks from "./Tracks/Tracks"
+import Activity from "./Activity/Activity"
+import Playlists from "./Playlists/Playlists"
 
 export default function HomePage() {
     const { userData, setUserData, token, setToken } = useContext(userContext);
@@ -19,10 +24,6 @@ export default function HomePage() {
             })
             .then((response) => {
                 // Return the full details of the user.
-                //console.log(response);
-
-                //setUserData(() => response.slice);
-                //console.log(userData);
                 return response;
             })
             .catch((err) => {
@@ -43,10 +44,11 @@ export default function HomePage() {
             <LeftBarNav />
             <div className='subpages-cont'>
                 <Routes>
-                    <Route path='/' element={<AllAdHome />} />
-                    <Route path='/myads' element={<MyAd />} />
-                    <Route path='/myfavs' element={<MyFavs />} />
-                    <Route path='/mysold' element={<MySold />} />
+                    <Route path='/' element={<Profile />} />
+                    <Route path='/artists' element={<Artists />} />
+                    <Route path='/tracks' element={<Tracks />} />
+                    <Route path='/activity' element={<Activity />} />
+                    <Route path='/playlists' element={<Playlists />} />
                 </Routes>
             </div>
         </div>
