@@ -27,7 +27,7 @@ export default function Tracks() {
                 data => {
                     setTracksLT(data.items);
                     setTracks(() => data.items);
-                    console.log(data.items);
+                    //console.log(data.items);
                 }
             )
         fetch("https://api.spotify.com/v1/me/top/tracks?time_range=medium_term", {
