@@ -20,14 +20,14 @@ Not a compulsion to follow this, feel free to divide work in different manner as
 ![](./screenshots/1.png)
 
 2. Profile Page
-![](./screenshots/2.png)
+![](./screenshots/snap1.PNG)
 
 3. Top Artists Page with filters
-![](./screenshots/3.png)
+![](./screenshots/snap2.PNG)
 
 
 4. Top Tracks Page with filters
-![](./screenshots/4.png)
+![](./screenshots/snap3.PNG)
 
 
 5. Recent activity (**Stretch**)
