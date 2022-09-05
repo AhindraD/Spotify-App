@@ -1,5 +1,9 @@
 # Spotify Profile App
+## https://spotify-profile-app.netlify.app/
 
+<br>
+<br>
+<br>
 We will be creating a Spotify Profile overview app which will fetch a Spotify user's info, recent activity, favorite tracks, favorite artists, and playlists.
 
 You need to use `redux` compulsorily in this project.
