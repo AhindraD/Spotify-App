@@ -15,7 +15,7 @@ export default function HomePage() {
     const { userData, setUserData, token, setToken } = useContext(userContext);
 
     async function getUserAccount(token) {
-        console.log(token);
+        //console.log(token);
         const user = await axios
             .get("https://api.spotify.com/v1/me", {
                 headers: {
@@ -29,7 +29,7 @@ export default function HomePage() {
             .catch((err) => {
                 console.log(err);
             });
-        console.log(user);
+        //console.log(user);
         setUserData(() => user.data)
     };
 

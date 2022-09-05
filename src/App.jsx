@@ -10,10 +10,16 @@ import userContext from "./Context/UserContext";
 function App() {
   let [userData, setUserData] = useState(null);
   let [token, setToken] = useState(null);
-  let [artists, setArtists] = useState(null);
-  let [tracks, setTracks] = useState(null);
   let [recent, setRecent] = useState(null);
   let [playlists, setPlaylists] = useState([]);
+
+  let [artistsLT, setArtistsLT] = useState(null);
+  let [artistsMT, setArtistsMT] = useState(null);
+  let [artistsST, setArtistsST] = useState(null);
+
+  let [tracksLT, setTracksLT] = useState(null);
+  let [tracksMT, setTracksMT] = useState(null);
+  let [tracksST, setTracksST] = useState(null);
 
   const navigate = useNavigate();
 
@@ -31,7 +37,7 @@ function App() {
   }
 
   return (
-    <userContext.Provider value={{ userData, setUserData, token, setToken, artists, setArtists, tracks, setTracks, recent, setRecent, playlists, setPlaylists }}>
+    <userContext.Provider value={{ userData, setUserData, token, setToken, artistsLT, setArtistsLT, artistsMT, setArtistsMT, artistsST, setArtistsST, tracksLT, setTracksLT, tracksMT, setTracksMT, tracksST, setTracksST, recent, setRecent, playlists, setPlaylists }}>
       <Routes>
         <Route path="/" element={
           <div className='login-cont'>

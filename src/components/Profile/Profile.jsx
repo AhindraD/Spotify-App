@@ -7,13 +7,17 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Profile() {
     const navigate = useNavigate();
-    const { userData, token, playlists, setToken, setUserData, setPlaylists, setArtists, setTracks, setRecent } = useContext(userContext);
+    const { userData, token, playlists, setToken, setUserData, setPlaylists, setArtistsLT, setArtistsMT, setArtistsST, setTracksLT, setTracksMT, setTracksST, setRecent } = useContext(userContext);
 
     function logout() {
         setToken(null);
         setUserData(null);
-        setArtists(null);
-        setTracks(null);
+        setArtistsLT(null);
+        setArtistsMT(null);
+        setArtistsST(null);
+        setTracksLT(null);
+        setTracksMT(null);
+        setTracksST(null);
         setPlaylists(null);
         setRecent(null);
         navigate("/");
