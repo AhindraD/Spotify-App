@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Profile() {
     const navigate = useNavigate();
-    const { userData, token, playlists, setToken, setUserData, setPlaylists, setArtistsLT, setArtistsMT, setArtistsST, setTracksLT, setTracksMT, setTracksST, setRecent } = useContext(userContext);
+    const { userData, token, playlists, setToken, setUserData, setPlaylists, setArtistsLT, setArtistsMT, setArtistsST, setTracksLT, setTracksMT, setTracksST, setRecent, artistsLT, tracksLT } = useContext(userContext);
 
     function logout() {
         setToken(null);
@@ -23,6 +23,13 @@ export default function Profile() {
         navigate("/");
     }
 
+    function getDuration(ms) {
+        let sec = parseInt(ms / 1000);
+        let min = parseInt(sec / 60);
+        sec = (sec % 60).toString();
+        sec = sec.length < 2 ? ("0" + sec) : sec;
+        return [min, sec].join(":");
+    }
 
     return (
         <>
@@ -56,8 +63,46 @@ export default function Profile() {
 
 
                         <div className="profile-bottom">
+                            <section className='profile-left'>
+                                <div className="arts-intro">
+                                    <h2>Top Artists Of All Time</h2>
+                                    <button className='see-more' onClick={() => { navigate("/home/artists") }}>see more</button>
+                                </div>
+                                {artistsLT.map((elem) => {
+                                    return (
+                                        <div className="artist-prof" key={elem.id}>
+                                            <div className="avatar">
+                                                <img src={elem.images.length > 0 ? elem.images[0].url : avatar} alt="" />
+                                            </div>
+                                            <p className="name">{elem.name}</p>
+                                        </div>
+                                    )
+                                })}
+                            </section>
 
+                            <section className='profile-right'>
+                                <div className="arts-intro">
+                                    <h2>Top Artists Of All Time</h2>
+                                    <button className='see-more' onClick={() => { navigate("/home/tracks") }}>see more</button>
+                                </div>
+                                {tracksLT.map((elem) => {
+                                    return (
+                                        <div className="track-prof" key={elem.id}>
+                                            <div className='sub-div-track'>
+                                                <div className="track-avatar">
+                                                    <img src={elem.album.images.length > 0 ? elem.album.images[0].url : avatar} alt="" />
+                                                </div>
 
+                                                <div className="track-desc">
+                                                    <p className="track-name">{elem.name}</p>
+                                                    <p className="track-summ">{elem.artists[0].name} &nbsp; - &nbsp; {elem.album.name}</p>
+                                                </div>
+                                            </div>
+                                            <p className="dur">{getDuration(elem.duration_ms)}</p>
+                                        </div>
+                                    )
+                                })}
+                            </section>
                         </div>
                     </div>
             }

@@ -13,11 +13,11 @@ function App() {
   let [recent, setRecent] = useState(null);
   let [playlists, setPlaylists] = useState([]);
 
-  let [artistsLT, setArtistsLT] = useState(null);
+  let [artistsLT, setArtistsLT] = useState([]);
   let [artistsMT, setArtistsMT] = useState(null);
   let [artistsST, setArtistsST] = useState(null);
 
-  let [tracksLT, setTracksLT] = useState(null);
+  let [tracksLT, setTracksLT] = useState([]);
   let [tracksMT, setTracksMT] = useState(null);
   let [tracksST, setTracksST] = useState(null);
 
