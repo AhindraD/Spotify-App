@@ -7,7 +7,7 @@ import music from "./music.svg"
 import recents from "./recents.svg"
 import playlist from "./playlist.svg"
 import github from "./github.svg"
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { useContext, useState } from 'react';
 import userContext from "../../Context/UserContext";

@@ -8,9 +8,12 @@ import Validate from './components/Validate';
 import userContext from "./Context/UserContext";
 // {AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}
 function App() {
-  const [searchKey, setSearchKey] = useState("");
-  const [userData, setUserData] = useState(null);
-  const [token, setToken] = useState("");
+  let [userData, setUserData] = useState(null);
+  let [token, setToken] = useState("");
+  let [artists, setArtists] = useState(null);
+  let [tracks, setTracks] = useState(null);
+  let [recent, setRecent] = useState(null);
+  let [playlists, setPlaylists] = useState(null);
 
   const navigate = useNavigate();
 
@@ -21,30 +24,6 @@ function App() {
   // https://api.spotify.com/v1/me/top/tracks  !!no data
   // https://api.spotify.com/v1/browse/featured-playlists
 
-  //href = {`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}
-  // const user_account = async (token) => {
-  //   console.log(token);
-  //   const user = await axios
-  //     .get("https://api.spotify.com/v1/me", {
-  //       headers: {
-  //         'Authorization': `Bearer ${token}`,
-  //       },
-  //     })
-  //     .then((response) => {
-  //       // Return the full details of the user.
-  //       //console.log(response);
-
-  //       //setUserData(() => response.slice);
-  //       //console.log(userData);
-  //       return response;
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  //   console.log(user);
-  //   return user;
-  // };
-
   function goToProfile() {
     //setTimeout(() => {
     navigate("/validate");
@@ -52,7 +31,7 @@ function App() {
   }
 
   return (
-    <userContext.Provider value={{ userData, setUserData, token, setToken }}>
+    <userContext.Provider value={{ userData, setUserData, token, setToken, artists, setArtists, tracks, setTracks, recent, setRecent, playlists, setPlaylists }}>
       <Routes>
         <Route path="/" element={
           <div className='login-cont'>
