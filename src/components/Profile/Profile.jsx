@@ -3,13 +3,23 @@ import "./Profile.css"
 import avatar from "./avatar.svg"
 import { useContext, useState } from 'react';
 import userContext from "../../Context/UserContext";
+import { useNavigate } from 'react-router-dom';
 
 export default function Profile() {
-    const { userData, token, playlists, setPlaylists } = useContext(userContext);
+    const navigate = useNavigate();
+    const { userData, token, playlists, setToken, setUserData, setPlaylists, setArtists, setTracks, setRecent } = useContext(userContext);
+
+    function logout() {
+        setToken(null);
+        setUserData(null);
+        setArtists(null);
+        setTracks(null);
+        setPlaylists(null);
+        setRecent(null);
+        navigate("/");
+    }
 
 
-
-    
     return (
         <>
             {
@@ -37,11 +47,14 @@ export default function Profile() {
                                 </section>
                             </div>
 
-                            <button className='logout'>Logout</button>
+                            <button className='logout' onClick={() => logout()}>Logout</button>
                         </div>
 
 
-                        <div className="profile-bottom"></div>
+                        <div className="profile-bottom">
+
+
+                        </div>
                     </div>
             }
         </>
