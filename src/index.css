@@ -50,3 +50,15 @@ body {
   color: aquamarine;
   font-size: 30px;
 }
+
+
+
+.home-cont {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.subpages-cont {
+  flex: 1;
+}
