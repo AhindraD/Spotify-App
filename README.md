@@ -21,7 +21,7 @@ Not a compulsion to follow this, feel free to divide work in different manner as
 
 ## Screenshots
 1. Login Page
-![](./screenshots/1.png)
+![](https://github.com/AhindraD/Spotify-App/blob/master/screenshots/spotify-login.PNG?raw=true)
 
 2. Profile Page
 ![](./screenshots/snap1.PNG)
