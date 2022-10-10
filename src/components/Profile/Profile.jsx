@@ -123,7 +123,7 @@ export default function Profile() {
 
                             <section className='profile-right'>
                                 <div className="arts-intro">
-                                    <h2>Top Artists Of All Time</h2>
+                                    <h2>Top Tracks Of All Time</h2>
                                     <button className='see-more' onClick={() => { navigate("/home/tracks") }}>see more</button>
                                 </div>
                                 {loading ? <h1>loading...</h1> :

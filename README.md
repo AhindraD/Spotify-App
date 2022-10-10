@@ -4,24 +4,20 @@
 <br>
 <br>
 <br>
-We will be creating a Spotify Profile overview app which will fetch a Spotify user's info, recent activity, favorite tracks, favorite artists, and playlists.
+A Spotify Profile overview app which will fetch a Spotify user's info, recent activity, favorite tracks, favorite artists, and playlists.
 
-You need to use `redux` compulsorily in this project.
 
-This is a group project (2 participants per group). Here is a sample breakdown of the project:
+- Project Setup (install Router, Redux, Redux toolkit etc.)
+- Auth Flow setup: Required for other screens
+- Login Page: Layout of the page and on button click link the auth flow 
+- Profile Page 
+- Top Artists Page with filters 
+- Top Tracks Page with filters
 
-- Project Setup (install Router, Redux, Redux toolkit etc.) (P1)
-- Auth Flow setup: Required for other screens (P2)
-- Login Page: Layout of the page and on button click link the auth flow (P1)
-- Profile Page (P2)
-- Top Artists Page with filters (P1)
-- Top Tracks Page with filters (P2)
-
-Not a compulsion to follow this, feel free to divide work in different manner as per your own and your partner's convenience.
 
 ## Screenshots
 1. Login Page
-![](./screenshots/1.png)
+![](https://github.com/AhindraD/Spotify-App/blob/master/screenshots/spotify-login.PNG?raw=true)
 
 2. Profile Page
 ![](./screenshots/snap1.PNG)
@@ -41,8 +37,3 @@ Not a compulsion to follow this, feel free to divide work in different manner as
 ![](./screenshots/5.png)
 
 
-Stretch: Mobile friendly:
-
-![](./screenshots/mob-1.png)
-
-![](./screenshots/mob-2.png)
