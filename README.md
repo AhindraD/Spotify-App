@@ -17,7 +17,6 @@ This is a group project (2 participants per group). Here is a sample breakdown o
 - Top Artists Page with filters (P1)
 - Top Tracks Page with filters (P2)
 
-Not a compulsion to follow this, feel free to divide work in different manner as per your own and your partner's convenience.
 
 ## Screenshots
 1. Login Page
@@ -41,8 +40,3 @@ Not a compulsion to follow this, feel free to divide work in different manner as
 ![](./screenshots/5.png)
 
 
-Stretch: Mobile friendly:
-
-![](./screenshots/mob-1.png)
-
-![](./screenshots/mob-2.png)
